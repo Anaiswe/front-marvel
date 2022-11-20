@@ -1,0 +1,237 @@
+/* General rules */
+/* ----- GLOBAL RULES ----- */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+  font-family: sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* HEADER */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.button {
+  height: 50px;
+  width: 115px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: red;
+  color: whitesmoke;
+  font-size: 15px;
+  outline: none;
+}
+
+/* HOME ***************************** */
+
+.loading {
+  text-align: center;
+  font-size: 50px;
+  color: red;
+}
+
+.home-container {
+  background-image: url(./Assets/Home-banner.jpg);
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  text-align: center;
+  font-size: 50px;
+}
+
+.home-return {
+  background-image: url(./Assets/home.png);
+}
+
+/*  Cards for Characters and Comics */
+.card-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  border: solid red;
+}
+.img {
+  width: 100%;
+  height: 200px;
+  overflow-x: scroll;
+  object-fit: contain;
+  object-position: left;
+  cursor: pointer;
+  gap: 15px;
+}
+
+.card-all {
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  /* border: solid black; */
+}
+
+/* LOGIN and SIGNUP */
+
+.under-construction {
+  height: 50px;
+  /* width: 100%; */
+  background-size: contain;
+  text-align: center;
+  font-size: 22px;
+}
+
+.img-construction {
+  background-image: url(./Assets/under-construction.jpg);
+}
+
+/* ---- MEDIA QUERIES ---- */
+@media (max-width: 1260px) {
+  /* ----- HOME PAGE ----- */
+  /* Characters card & Comics card */
+  .characters-card,
+  .comics-card {
+    width: calc(100% / 4 - 10px);
+  }
+  .characters-wrapper .characters-card:not(:nth-child(5n)),
+  .comics-wrapper .comics-card:not(:nth-child(5n)) {
+    margin-right: 0px;
+  }
+  .characters-wrapper .characters-card:not(:nth-child(4n + 4)),
+  .comics-wrapper .comics-card:not(:nth-child(4n + 4)) {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 1080px) {
+  /* ----- HOME PAGE ----- */
+  /* Characters card & Comics card */
+  .characters-card,
+  .comics-card {
+    width: calc(100% / 3 - 10px);
+  }
+  .characters-wrapper .characters-card:not(:nth-child(3n + 3)),
+  .comics-wrapper .comics-card:not(:nth-child(3n + 3)) {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 880px) {
+  /* ----- HOME PAGE ----- */
+  /* Characters card & Comics card */
+  .characters-card,
+  .comics-card {
+    width: calc(100% / 2 - 10px);
+  }
+  .characters-wrapper .characters-card:not(:nth-child(2n + 2)),
+  .comics-wrapper .comics-card:not(:nth-child(2n + 2)) {
+    margin-right: 10px;
+  }
+
+  /* ----- INDIVIDUAL CHARACTER (WITH COMICS) PAGE ----- */
+  .character-bloc-1 img {
+    width: 250px;
+    height: 250px;
+  }
+  .character-bloc-2 img {
+    width: 140px;
+    height: 200px;
+  }
+  .character-bloc-2-comic {
+    height: calc(200px + 6px);
+  }
+}
+
+@media (max-width: 730px) {
+  /* ----- INDIVIDUAL CHARACTER (WITH COMICS) PAGE ----- */
+  .character-bloc {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .character-bloc-1 h2 {
+    margin-bottom: 30px;
+  }
+  .character-bloc-1 img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .character-bloc-2 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  /* ----- SIGNUP & LOGIN ----- */
+  .input-form {
+    width: 70%;
+  }
+  .form .btn-red {
+    width: 70%;
+  }
+
+  /* ----- HEADER ----- */
+  header {
+    height: 32vh;
+  }
+  header div {
+    height: calc(10vh);
+  }
+  header img {
+    width: 120px;
+  }
+
+  /* Navigation */
+  header nav span {
+    font-size: 14px;
+  }
+  header nav span:not(:last-child) {
+    margin-right: 30px;
+  }
+  header nav button {
+    width: 80px;
+    font-size: 12px;
+  }
+
+  /* Search bar */
+  .comics-search-bar input,
+  .characters-search-bar input {
+    width: 70vw;
+  }
+
+  /* ----- HOME PAGE ----- */
+  /* Characters card & Comics card */
+  .characters-card,
+  .comics-card {
+    width: calc(100% / 4 - 10px);
+  }
+  .characters-wrapper .characters-card:not(:nth-child(4n + 4)),
+  .comics-wrapper .comics-card:not(:nth-child(4n + 4)) {
+    margin-right: 10px;
+  }
+  .characters-card img,
+  .comics-card img {
+    height: 100px;
+  }
+  .hidden {
+    display: none;
+  }
+  .comics-card-details span,
+  .characters-card-details span {
+    font-size: 14px;
+  }
+
+  /* ----- INDIVIDUAL CHARACTER (WITH COMICS) PAGE ----- */
+  .character-bloc-2 img {
+    height: 200px;
+  }
+  .character-bloc-2-comic {
+    height: calc(200px + 6px);
+  }
+}
